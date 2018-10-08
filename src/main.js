@@ -4,7 +4,7 @@ import WebFont from 'webfontloader';
 import Web3 from 'web3';
 
 import App from './App.vue'
-import ContractJson from './build/contracts/exchange.vyper.json';
+import ContractJson from './build/contracts/exchange.json';
 
 import 'normalize.css';
 
