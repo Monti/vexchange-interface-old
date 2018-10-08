@@ -5,6 +5,8 @@
       width="500"
       height="500"
       :data-clipboard-text="address" />
+
+    <small class="click-to-copy">Click QR Code to copy address</small>
   </div>
 </template>
 
@@ -42,10 +44,24 @@ export default {
 .qr-code-wrapper {
   background: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  text-align: center;
 
   @media all and (max-width: 768px) {
     order: 0;
     margin-bottom: 40px;
+  }
+
+  small {
+    margin-bottom: 10px;
+  }
+
+  .click-to-copy {
+    display: none;
+    margin-top: 0;
+
+    @media all and (max-width: 768px) {
+      display: block;
+    }
   }
 }
 </style>

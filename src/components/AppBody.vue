@@ -4,7 +4,6 @@
       <div class="inner-container">
         <div class="transfer-info">
           <TransferInfo />
-          <p class="click-to-copy">Click to copy</p>
           <QRCode />
         </div>
         <Calculator :contract="contract" />
@@ -63,15 +62,6 @@ export default {
   @media all and (max-width: 768px) {
     flex-direction: column;
     margin: 40px 5vw;
-  }
-
-  .click-to-copy {
-    display: none;
-    margin-top: 0;
-
-    @media all and (max-width: 768px) {
-      display: block;
-    }
   }
 }
 </style>
