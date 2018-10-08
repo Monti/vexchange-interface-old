@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import { thorify } from "thorify";
 import WebFont from 'webfontloader';
+import Web3 from 'web3';
 
 import App from './App.vue'
+import ContractJson from './build/contracts/exchange.vyper.json';
 
 import 'normalize.css';
 
-const Web3 = require("web3");
 const web3 = thorify(new Web3(), "http://localhost:8669");
 const address = '0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e';
+const Contract = new web3.eth.Contract(ContractJson.abi, address);
 
 const getBalance = async () => {
   return {
@@ -28,6 +30,7 @@ Vue.config.productionTip = false;
 new Vue({
   render: h => h(App, {
     props: {
+      Contract,
       getBalance: async () => getBalance(),
     },
   }),

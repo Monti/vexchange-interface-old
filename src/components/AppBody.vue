@@ -7,6 +7,7 @@
           <p class="click-to-copy">Click to copy</p>
           <QRCode />
         </div>
+        <Calculator :contract="contract" />
         <Prices :prices="prices" :balance="balance" />
         <FeeTable />
       </div>
@@ -20,17 +21,23 @@ import StyledButton from './StyledButton'
 import TransferInfo from './TransferInfo';
 import FeeTable from './FeeTable';
 import Prices from './Prices';
+import Calculator from './Calculator';
 
 export default {
   name: 'AppBody',
   components: { 
     TransferInfo,
     StyledButton,
+    Calculator,
     FeeTable,
     Prices,
     QRCode,
   },
-  props: ['prices', 'balance'],
+  props: [
+    'prices',
+    'balance',
+    'contract',
+  ],
 }
 </script>
 

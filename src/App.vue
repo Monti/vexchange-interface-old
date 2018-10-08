@@ -8,6 +8,7 @@
 
     <AppBody
       v-if="hasBalance"
+      :contract="Contract"
       :balance="balance"
       :prices="prices" />
   </div>
@@ -34,6 +35,7 @@ export default {
    Balance,
   },
   props: [
+    'Contract',
     'getBalance',
   ],
   data() {
@@ -67,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -108,4 +110,25 @@ body {
   max-width: 1196px;
   margin: 0 auto;
 }
+
+.row {
+  display: flex;
+  margin-right: -20px;
+  margin-left: -20px;
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.col {
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 50%;
+
+  @media all and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
 </style>

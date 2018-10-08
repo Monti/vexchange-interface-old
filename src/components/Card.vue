@@ -4,7 +4,7 @@
       <span class="title">{{ title }}</span>
       <span class="extra">{{ extra }}</span>
     </div>
-    <div class="card-body">
+    <div class="card-body" :style="{ padding: padding }">
       <slot></slot>
     </div>
   </div>
@@ -13,7 +13,11 @@
 <script>
 export default {
   name: 'Card',
-  props: ['title', 'extra'],
+  props: [
+    'title',
+    'extra',
+    'padding'
+  ],
 }
 </script>
 <style lang="scss" scoped>

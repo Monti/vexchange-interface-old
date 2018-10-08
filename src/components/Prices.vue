@@ -75,29 +75,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
-  display: flex;
-  margin-right: -20px;
-  margin-left: -20px;
-
-  @media all and (max-width: 768px) {
-    flex-direction: column;
-  }
-}
-
 .wrapper {
   display: flex;
   justify-content: space-between;
-}
-
-.col {
-  padding-right: 20px;
-  padding-left: 20px;
-  width: 50%;
-
-  @media all and (max-width: 768px) {
-    width: 100%;
-  }
 }
 
 .title {
