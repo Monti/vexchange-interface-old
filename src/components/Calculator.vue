@@ -4,7 +4,7 @@
       <span class="label">vet to vtho estimate calculator</span>
       <input class="input" type="number" v-model="vet.value" />
       <div class="value">
-        {{ format(vet.returned) }}
+        {{ format(vtho.returned) }}
         <small>VTHO</small>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <span class="label">vtho to vet estimate calculator</span>
       <input class="input" type="number" v-model="vtho.value" />
       <div class="value">
-        {{ format(vtho.returned) }}
+        {{ format(vet.returned) }}
         <small>VET</small>
       </div>
     </div>
@@ -21,12 +21,13 @@
 
 <script>
 import _ from 'lodash';
+import BigNumber from 'bignumber.js';
 import Card from './Card';
 
 export default {
   name: 'Calculator',
   components: { Card },
-  props: ['contract'],
+  props: ['contract', 'balance'],
   data() {
     return {
       vet: {
@@ -42,19 +43,21 @@ export default {
   watch: {
     'vet.value': _.debounce(function(val = 0) {
       const { getEthToTokenPrice } = this.contract.methods;
+      const num = web3.toWei(val);
 
-      getEthToTokenPrice(val).call()
+      getEthToTokenPrice(num).call()
         .then(data => {
-          this.vet.returned = data;
+          this.vtho.returned = web3.fromWei(data);
         });
 
     }, 500),
     'vtho.value': _.debounce(function(val = 0) {
       const { getTokenToEthPrice } = this.contract.methods;
+      const num = web3.toWei(val);
 
-      getTokenToEthPrice(val).call()
+      getTokenToEthPrice(num).call()
         .then(data => {
-          this.vtho.returned = data;
+          this.vet.returned = web3.fromWei(data);
         });
     })
   },

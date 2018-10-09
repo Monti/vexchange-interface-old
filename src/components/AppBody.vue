@@ -6,7 +6,7 @@
           <TransferInfo />
           <QRCode />
         </div>
-        <Calculator :contract="contract" />
+        <Calculator :contract="contract" :balance="balance" />
         <Prices :prices="prices" :balance="balance" />
         <FeeTable />
       </div>
