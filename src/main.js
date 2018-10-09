@@ -30,6 +30,7 @@ Vue.config.productionTip = false;
 new Vue({
   render: h => h(App, {
     props: {
+      web3,
       Contract,
       getBalance: async () => getBalance(),
     },
