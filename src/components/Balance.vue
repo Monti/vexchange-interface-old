@@ -73,6 +73,7 @@ export default {
 
     span {
       font-weight: 300;
+      text-transform: uppercase;
     }
 
     &:hover {

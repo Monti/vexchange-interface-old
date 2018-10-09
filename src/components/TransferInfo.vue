@@ -17,6 +17,11 @@
             Recommended trade size is 35k VTHO / 3k VET or less
           </small>
         </li>
+        <li>
+          <small>
+            Due to a display issue with the mobile wallet, vtho to vet trades will not properly display received vet
+          </small>
+        </li>
       </ul>
     </div>
   </div>

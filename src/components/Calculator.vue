@@ -1,31 +1,41 @@
 <template>
-  <div class="wrapper">
-    <div class="calc">
-      <span class="label">vet to vtho estimate calculator</span>
-      <input class="input" type="number" v-model="vet.value" />
-      <div class="value">
-        {{ format(vtho.returned) }}
-        <small>VTHO</small>
+  <Card title="Calculator">
+    <div class="wrapper">
+      <div class="calc">
+        <span class="label">vet to vtho estimate</span>
+        <input class="input" type="number" v-model="vet.value" placeholder="0" />
+        <div class="value">
+          {{ format(vtho.returned) }}
+          <small>VTHO</small>
+        </div>
+      </div>
+      <div class="calc">
+        <span class="label">vtho to vet estimate</span>
+        <input class="input" type="number" v-model="vtho.value" placeholder="0" />
+        <div class="value">
+          {{ format(vet.returned) }}
+          <small>VET</small>
+        </div>
       </div>
     </div>
-    <div class="calc">
-      <span class="label">vtho to vet estimate calculator</span>
-      <input class="input" type="number" v-model="vtho.value" />
-      <div class="value">
-        {{ format(vet.returned) }}
-        <small>VET</small>
-      </div>
-    </div>
-  </div>
+    <small class="tip">
+      <span class="icon">
+        <tip-icon />
+      </span>
+      This calculator pulls prices directly from the smart contract, however, another user may enter an order before you. As such, the end price may differ from what the calculator is displaying
+    </small>
+  </Card>
 </template>
 
 <script>
 import _ from 'lodash';
+
+import TipIcon from './svgs/TipIcon';
 import Card from './Card';
 
 export default {
   name: 'Calculator',
-  components: { Card },
+  components: { Card, TipIcon },
   props: ['contract', 'balance'],
   data() {
     return {
@@ -71,7 +81,6 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: flex;
-  padding: 1.5rem 0;
 
   @media all and (max-width: 768px) {
     flex-direction: column;
@@ -110,7 +119,6 @@ export default {
 .label {
   font-size: 0.9rem;
   font-weight: 300;
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -123,8 +131,16 @@ export default {
 }
 
 small {
-  font-size: 0.9rem;
-  margin-left: 10px;
+  font-size: 0.8rem;
+  margin-top: 20px;
 }
 
+.tip {
+  display: flex;
+}
+
+.icon {
+  width: 15px;
+  margin-top: 5px;
+}
 </style>

@@ -113,8 +113,8 @@ body {
 
 .row {
   display: flex;
-  margin-right: -20px;
-  margin-left: -20px;
+  margin-right: -15px;
+  margin-left: -15px;
 
   @media all and (max-width: 768px) {
     flex-direction: column;
@@ -122,8 +122,8 @@ body {
 }
 
 .col {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   width: 50%;
 
   @media all and (max-width: 768px) {
