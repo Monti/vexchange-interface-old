@@ -26,7 +26,7 @@ import Card from './Card';
 export default {
   name: 'Calculator',
   components: { Card },
-  props: ['contract', 'balance', 'web3'],
+  props: ['contract', 'balance'],
   data() {
     return {
       vet: {
@@ -42,21 +42,21 @@ export default {
   watch: {
     'vet.value': _.debounce(function(val = 0) {
       const { getEthToTokenPrice } = this.contract.methods;
-      const num = this.web3.utils.toWei(val);
+      const num = this.$web3.utils.toWei(val);
 
       getEthToTokenPrice(num).call()
         .then(data => {
-          this.vtho.returned = this.web3.utils.fromWei(data);
+          this.vtho.returned = this.$web3.utils.fromWei(data);
         });
 
     }, 500),
     'vtho.value': _.debounce(function(val = 0) {
       const { getTokenToEthPrice } = this.contract.methods;
-      const num = this.web3.utils.toWei(val);
+      const num = this.$web3.utils.toWei(val);
 
       getTokenToEthPrice(num).call()
         .then(data => {
-          this.vet.returned = this.web3.utils.fromWei(data);
+          this.vet.returned = this.$web3.utils.fromWei(data);
         });
     })
   },

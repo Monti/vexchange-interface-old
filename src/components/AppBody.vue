@@ -6,11 +6,15 @@
           <TransferInfo />
           <QRCode />
         </div>
+
         <Calculator
-        :web3="web3"
-        :contract="contract"
-        :balance="balance" />
-        <Prices :prices="prices" :balance="balance" />
+          :contract="contract"
+          :balance="balance" />
+
+        <Prices
+          :prices="prices"
+          :balance="balance" />
+
         <FeeTable />
       </div>
     </div>
@@ -36,7 +40,6 @@ export default {
     QRCode,
   },
   props: [
-    'web3',
     'prices',
     'balance',
     'contract',

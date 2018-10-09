@@ -7,9 +7,8 @@
       :prices="prices" />
 
     <AppBody
-      :web3="web3"
-      :prices="prices"
       v-if="hasBalance"
+      :prices="prices"
       :balance="balance"
       :contract="Contract" />
   </div>
@@ -36,7 +35,6 @@ export default {
    Balance,
   },
   props: [
-    'web3',
     'Contract',
     'getBalance',
   ],
