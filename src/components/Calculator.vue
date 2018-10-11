@@ -1,8 +1,8 @@
 <template>
-  <Card title="Calculator">
+  <Card :title="$t('calculator.label')">
     <div class="wrapper">
       <div class="calc">
-        <span class="label">vet to vtho estimate</span>
+        <span class="label">{{ $t('calculator.VETToVTHO') }}</span>
         <input class="input" type="number" v-model="vet.value" placeholder="0" />
         <div class="value">
           {{ format(vtho.returned) }}
@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="calc">
-        <span class="label">vtho to vet estimate</span>
+        <span class="label">{{ $t('calculator.VTHOToVET') }}</span>
         <input class="input" type="number" v-model="vtho.value" placeholder="0" />
         <div class="value">
           {{ format(vet.returned) }}
@@ -22,7 +22,7 @@
       <span class="icon">
         <tip-icon />
       </span>
-      This calculator pulls prices directly from the smart contract, however, another user may enter an order before you. As such, the end price may differ from what the calculator is displaying
+      {{ $t('calculator.notice') }}
     </small>
   </Card>
 </template>

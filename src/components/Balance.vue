@@ -2,7 +2,6 @@
   <div class="balance-wrapper">
     <div class="container">
       <div class="inner-container">
-
         <div class="balances">
           <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
             <span>VET Balance:</span>

@@ -1,9 +1,9 @@
 <template>
-  <Card title="Gas Fees" extra="The smart contract charges a 2% fee">
+  <Card :title="'Gas ' + $t('fees.label')" :extra="$t('fees.subtitle')">
     <div class="wrapper">
       <div class="item">
         <div class="title">
-          minimum vet deposit
+          {{ $t('fees.minimumVET') }}
         </div>
         <div class="description">
           {{ vet.deposit }}
@@ -12,7 +12,7 @@
       </div>
       <div class="item">
         <div class="title">
-          vet gas fees
+          vet gas {{ $t('fees.label') }}
         </div>
         <div class="description">
           {{ vet.gas }}
@@ -21,7 +21,7 @@
       </div>
       <div class="item">
         <div class="title">
-          minimum vtho deposit
+          {{ $t('fees.minimunVTHO') }}
         </div>
         <div class="description description--vtho">
           {{ vtho.deposit }}
@@ -30,7 +30,7 @@
       </div>
       <div class="item">
         <div class="title">
-          vtho gas fees
+          vtho gas {{ $t('fees.label') }}
         </div>
         <div class="description description--vtho">
           {{ vtho.gas }}

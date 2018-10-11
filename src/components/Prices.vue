@@ -1,11 +1,11 @@
 <template>
   <div class="row">
     <div class="col">
-      <Card title="Vexchange Price">
+      <Card :title="'Vexchange ' + $t('price')">
         <div class="wrapper">
           <div class="item">
             <div class="title">
-              vet price
+              vet {{ $t('price') }}
             </div>
             <div class="description">
               {{ format(contractPrice.vet) }}
@@ -13,7 +13,7 @@
           </div>
           <div class="item">
             <div class="title">
-              vtho price
+              vtho {{ $t('price') }}
             </div>
             <div class="description">
               {{ format(contractPrice.vtho, 10, false) }}
@@ -23,11 +23,11 @@
       </Card>
     </div>
     <div class="col">
-      <Card title="Coinmarketcap Price">
+      <Card :title="'Coinmarketcap ' + $t('price')">
         <div class="wrapper">
           <div class="item">
             <div class="title">
-              vet price
+              vet {{ $t('price') }}
             </div>
             <div class="description">
               {{ conversion(prices.vet) }}
@@ -35,7 +35,7 @@
           </div>
           <div class="item">
             <div class="title">
-              vtho price
+              vtho {{ $t('price') }}
             </div>
             <div class="description">
               {{ conversion(prices.vtho) }}

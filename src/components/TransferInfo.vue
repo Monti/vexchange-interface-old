@@ -1,25 +1,25 @@
 <template>
   <div class="wrapper">
     <ol class="ol">
-      <li>Select VET or VTHO in your VeChain mobile wallet and press transfer.</li>
-      <li>Open the QR code scanner (top right corner) and scan the QR code to the right.</li>
-      <li>Enter the amount you would like to swap (must be higher than minimum) and complete the transaction.</li>
+      <li>{{ $t('instructions.1') }}</li>
+      <li>{{ $t('instructions.2') }}</li>
+      <li>{{ $t('instructions.3') }}</li>
     </ol>
     <div>
       <ul>
         <li>
           <small>
-            Save the exchange address to your contacts for convenient access and better security in the event the web interface gets compromised.
+            {{ $t('tips.1') }}
           </small>
         </li>
         <li>
           <small>
-            Recommended trade size is 100k VTHO / 12k VET or less
+            {{ $t('tips.2') }}
           </small>
         </li>
         <li>
           <small>
-            Due to a display issue with the mobile wallet, VTHO to VET trades will not properly display received VET
+            {{ $t('tips.3') }}
           </small>
         </li>
       </ul>
