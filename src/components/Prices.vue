@@ -54,7 +54,20 @@ export default {
   components: { 
     Card,
   },
-  props: ['prices', 'balance'],
+  props: ['prices'],
+  data() {
+    return {
+      balance: {
+        vet: 0,
+        vtho: 0,
+      }
+    }
+  },
+  mounted() {
+    this.$getBalance().then(data => {
+      this.balance = data;
+    });
+  },
   computed: {
     contractPrice() {
       return {

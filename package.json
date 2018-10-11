@@ -20,6 +20,7 @@
     "thorify": "^1.0.1",
     "vue": "^2.5.17",
     "vue-i18n": "^8.1.0",
+    "vue-router": "^3.0.1",
     "web3": "^1.0.0-beta.36",
     "webfontloader": "^1.6.28"
   },

@@ -1,69 +1,26 @@
 <template>
   <div id="app">
-    <AppHeader :prices="prices" />
-    <Balance
-      v-if="hasBalance"
-      :balance="balance"
-      :prices="prices" />
 
-    <AppBody
-      v-if="hasBalance"
-      :prices="prices"
-      :balance="balance"
-      :contract="Contract" />
+    <router-view />
+
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import AppHeader from '@/components/AppHeader'
-import AppBody from '@/components/AppBody'
-import Balance from '@/components/Balance'
-import _ from 'lodash';
-
-const vthoTicker = 'https://api.coinmarketcap.com/v2/ticker/3012/';
-const vetTicker = 'https://api.coinmarketcap.com/v2/ticker/3077/';
-
-const getVtho = () => axios.get(vthoTicker);
-const getVet = () => axios.get(vetTicker);
 
 export default {
   name: 'app',
-  components: {
-   AppHeader,
-   AppBody,
-   Balance,
-  },
-  props: [
-    'Contract',
-    'getBalance',
-  ],
   data() {
     return {
-      balance: {},
-      prices: {
-        vet: 0,
-        vtho: 0,
-      }
+      locale: this.$i18n.locale,
     }
   },
-  mounted() {
-    axios.all([getVtho(), getVet()])
-      .then(axios.spread((vtho, vet) => {
-        const { data: { data: vthoData } } = vtho;
-        const { data: { data: vetData } } = vet;
-
-        this.prices.vet = vetData.quotes.USD.price;
-        this.prices.vtho = vthoData.quotes.USD.price;
-      }));
-
-    this.getBalance().then(data => {
-      this.balance = data;
-    });
+  created() {
+    this.$i18n.locale = this.$route.params.locale || this.locale;
   },
-  computed: {
-    hasBalance() {
-      return !_.isEmpty(this.balance);
+  watch: {
+    '$route'({ params }) {
+      this.$i18n.locale = params.locale || this.locale;
     }
   }
 }

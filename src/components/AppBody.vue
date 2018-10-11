@@ -7,20 +7,16 @@
           <QRCode />
         </div>
 
-        <Calculator
-          :contract="contract"
-          :balance="balance" />
+        <Calculator />
 
         <Prices
-          :prices="prices"
-          :balance="balance" />
+          :prices="prices" />
 
         <FeeTable />
       </div>
     </div>
   </div>
-</template>
-
+</template> 
 <script>
 import QRCode from './QRCode';
 import StyledButton from './StyledButton'
@@ -41,8 +37,6 @@ export default {
   },
   props: [
     'prices',
-    'balance',
-    'contract',
   ],
 }
 </script>

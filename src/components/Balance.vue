@@ -2,19 +2,20 @@
   <div class="balance-wrapper">
     <div class="container">
       <div class="inner-container">
-        <div class="balances">
-          <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
-            <span>VET Balance:</span>
-            {{ formatCount(balance.vet) }}
-            ({{ formatPrice(balance.vet, 'vet') }})
-          </a>
-          <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
-            <span>VTHO Balance: </span>
-            {{ formatCount(balance.vtho) }}
-            ({{ formatPrice(balance.vtho, 'vtho') }})
-          </a>
+        <div class="wrapper">
+          <div class="balances">
+            <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
+              <span>VET Balance:</span>
+              {{ formatCount(balance.vet) }}
+              ({{ formatPrice(balance.vet, 'vet') }})
+            </a>
+            <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
+              <span>VTHO Balance: </span>
+              {{ formatCount(balance.vtho) }}
+              ({{ formatPrice(balance.vtho, 'vtho') }})
+            </a>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -25,10 +26,22 @@
 export default {
   name: 'Balance',
   props: [
-    'balance',
     'prices',
     'lastValue',
   ],
+  data() {
+    return {
+      balance: {
+        vet: 0,
+        vtho: 0,
+      },
+    }
+  },
+  mounted() {
+    this.$getBalance().then(data => {
+      this.balance = data;
+    });
+  },
   methods: {
     formatCount(num) {
       let number = num / 1000000000000000000;
@@ -60,13 +73,17 @@ export default {
   }
 }
 
-.balances {
+.wrapper {
   align-items: center;
   display: flex;
   height: 100%;
+  justify-content: space-between;
+}
 
+.balances {
   a {
     color: inherit;
+    display: inline-block;
     margin: 15px 30px 15px 0;
     text-decoration: none;
 

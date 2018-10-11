@@ -36,7 +36,6 @@ import Card from './Card';
 export default {
   name: 'Calculator',
   components: { Card, TipIcon },
-  props: ['contract', 'balance'],
   data() {
     return {
       vet: {
@@ -51,7 +50,7 @@ export default {
   },
   watch: {
     'vet.value': _.debounce(function(val = 0) {
-      const { getEthToTokenPrice } = this.contract.methods;
+      const { getEthToTokenPrice } = this.$contract.methods;
       const num = this.$web3.utils.toWei(val);
 
       getEthToTokenPrice(num).call()
@@ -61,7 +60,7 @@ export default {
 
     }, 500),
     'vtho.value': _.debounce(function(val = 0) {
-      const { getTokenToEthPrice } = this.contract.methods;
+      const { getTokenToEthPrice } = this.$contract.methods;
       const num = this.$web3.utils.toWei(val);
 
       getTokenToEthPrice(num).call()
