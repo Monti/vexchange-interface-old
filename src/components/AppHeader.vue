@@ -45,6 +45,12 @@ export default {
 .header-wrapper {
   background: linear-gradient(35deg,#002fca,#1875ff);
   padding: 24px;
+
+  @media all and (max-width: 768px) {
+    .inner-container {
+      margin: 0;
+    }
+  }
 }
 
 header {
@@ -62,6 +68,10 @@ h1 {
   letter-spacing: 5px;
   margin: 0;
   text-transform: uppercase;
+
+  @media all and (max-width: 768px) {
+    font-size: 1.35rem;
+  }
 }
 
 .languages {

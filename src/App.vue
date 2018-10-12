@@ -60,6 +60,7 @@ body {
 
 .inner-container {
   margin: 0 5vw;
+
 }
 
 .container {
