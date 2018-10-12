@@ -50,7 +50,7 @@ export default {
   },
   watch: {
     'vet.value': _.debounce(function(val = 0) {
-      const { getEthToTokenPrice } = this.$contract.methods;
+      const { getEthToTokenPrice } = this.$Contract.methods;
       const num = this.$web3.utils.toWei(val);
 
       getEthToTokenPrice(num).call()
@@ -60,7 +60,7 @@ export default {
 
     }, 500),
     'vtho.value': _.debounce(function(val = 0) {
-      const { getTokenToEthPrice } = this.$contract.methods;
+      const { getTokenToEthPrice } = this.$Contract.methods;
       const num = this.$web3.utils.toWei(val);
 
       getTokenToEthPrice(num).call()
