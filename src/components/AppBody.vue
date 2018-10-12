@@ -6,12 +6,8 @@
           <TransferInfo />
           <QRCode />
         </div>
-
+        <Prices :prices="prices" />
         <Calculator />
-
-        <Prices
-          :prices="prices" />
-
         <FeeTable />
       </div>
     </div>

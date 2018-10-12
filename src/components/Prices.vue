@@ -110,5 +110,9 @@ export default {
     font-size: 0.7em;
     margin-left: -10px;
   }
+
+  @media all and (max-width: 768px) {
+    font-size: 2em;
+  }
 }
 </style>

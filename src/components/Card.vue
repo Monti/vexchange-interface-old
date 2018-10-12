@@ -37,7 +37,7 @@ export default {
   padding: 1.5rem;
 
   @media all and (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }
 
@@ -50,6 +50,7 @@ export default {
 
   @media all and (max-width: 768px) {
     flex-direction: column;
+    padding: 1rem;
   }
 }
 
@@ -58,6 +59,10 @@ export default {
   flex: 1;
   font-size: 0.9em;
   text-align: right;
+
+  @media all and (max-width: 768px) {
+    text-align: left;
+  }
 }
 
 .title {

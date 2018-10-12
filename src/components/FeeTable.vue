@@ -86,6 +86,7 @@ export default {
   font-size: 0.8em;
   font-weight: 300;
   text-transform: uppercase;
+
 }
 
 .description {
@@ -93,6 +94,10 @@ export default {
   font-size: 3em;
   font-weight: 300;
   line-height: 1;
+
+  @media all and (max-width: 768px) {
+    font-size: 2em;
+  }
 }
 
 .description--vtho {
