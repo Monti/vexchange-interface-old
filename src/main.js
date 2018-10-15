@@ -20,7 +20,7 @@ import 'normalize.css';
 import AppHome from './views/Home';
 import Transactions from "./views/Transactions";
 
-const web3 = thorify(new Web3(), "https://vethor-node.digonchain.com/");
+const web3 = thorify(new Web3(), "http://localhost:8669");
 const address = '0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e';
 const Contract = new web3.eth.Contract(ContractJson.abi, address);
 const language = window.navigator.userLanguage || window.navigator.language;

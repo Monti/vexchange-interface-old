@@ -1,7 +1,6 @@
 <template>
   <div>
-    <AppHeader :prices="prices" />
-    <Balance :prices="prices" />
+    
     <div>
       Hello
     </div>
@@ -14,6 +13,7 @@ import Balance from "@/components/Balance";
 import TokenJson from "../build/contracts/token.json";
 import { thorify } from "thorify";
 import Web3 from 'web3';
+import { debug } from 'util';
 
 export default {
   name: "Transactions",
@@ -25,26 +25,22 @@ export default {
     return {};
   },
   mounted() {
-    console.log(this.$Contract);
-    this.$Contract.events
-      .EthPurchase({ fromBlock: 0 }, (error, eventResult) => {
-        if (error) console.log("Error in myEvent event handler: " + error);
-        else console.log("myEvent: " + JSON.stringify(eventResult.args));
+    const web3 = thorify(new Web3(), "http://localhost:8669");
+    web3.eth.getBlock("latest").then(num=>{
+    console.log(this.$Contract)
+    console.log(num);
+    this.$Contract.getPastEvents('Transfer', {fromBlock:0, to:num.number-1},(error, eventResult) => {
+         console.log("Error in myEvent event handler: " + error);
+         console.log("myEvent: " + JSON.stringify(eventResult));
       })
-      .on("data", event => console.log("EthPurchase Event", event));
+     // .on("data", event => console.log("EthPurchase Event", event));
 
-    debugger;
-    const web3 = thorify(new Web3(), "http://vechain-api.monti.finance");
+   
+    
     const address = "0x0000000000000000000000000000456e65726779";
     const Token = new web3.eth.Contract(TokenJson, address);
-    Token.events
-      .Transfer({ fromBlock: 0 }, (error, eventResult) => {
-        if (error) console.log("Error in Transfer event handler: " + error);
-        else console.log("Transfer: " + JSON.stringify(eventResult.args));
-      })
-      .on("data", event => console.log("Transfer Event", event));
-  }
-};
+  })}}
+
 </script>
 
 <style scoped>
