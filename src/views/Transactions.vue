@@ -25,15 +25,14 @@ export default {
     return {};
   },
   mounted() {
-    const web3 = thorify(new Web3(), "https://vethor-node.digonchain.com/");
-    web3.eth.getBlock("latest").then(num => {
+    const web3 = thorify(new Web3(), "http://127.0.0.1:8669/");
+    web3.eth.getBlock("latest").then(block => {
       console.log(this.$Contract);
-      console.log(num);
+      console.log(block);
       this.$Contract.getPastEvents(
-        "Transfer",
-        { limit: 10, from: 0 },
+        "EthPurchase",
+        { limit: 10, from: block.number },
         (error, eventResult) => {
-          debugger;
           console.log("Error in myEvent event handler: " + error);
           console.log("myEvent: " + JSON.stringify(eventResult));
         }
