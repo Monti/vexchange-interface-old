@@ -3,6 +3,7 @@
     <AppHeader :prices="prices" />
     <Balance :prices="prices" />
     <AppBody :prices="prices" />
+    <Footer />
   </div>
 </template>
 
@@ -11,7 +12,7 @@ import axios from 'axios';
 import AppHeader from '@/components/AppHeader'
 import AppBody from '@/components/AppBody'
 import Balance from '@/components/Balance'
-
+import Footer from '@/components/Footer'
 
 const vthoTicker = 'https://api.coinmarketcap.com/v2/ticker/3012/';
 const vetTicker = 'https://api.coinmarketcap.com/v2/ticker/3077/';
@@ -25,6 +26,7 @@ export default {
    AppHeader,
    AppBody,
    Balance,
+   Footer
   },
   props: ['locale'],
   data() {
