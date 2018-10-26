@@ -3,12 +3,14 @@
     <AppHeader :prices="prices" />
     <Balance :prices="prices" />
     <AppBody :prices="prices" />
+    <AppFooter />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
 import AppBody from '@/components/AppBody'
 import Balance from '@/components/Balance'
 
@@ -23,6 +25,7 @@ export default {
   name: 'AppHome',
   components: {
    AppHeader,
+   AppFooter,
    AppBody,
    Balance,
   },
