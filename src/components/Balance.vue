@@ -1,41 +1,35 @@
 <template>
-  <div class="balance-wrapper">
-    <div class="container">
-      <div class="inner-container">
-        <div class="wrapper">
-          <div class="balances">
-            <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
-              <span>VET Balance:</span>
-              {{ formatCount(balance.vet) }}
-              ({{ formatPrice(balance.vet, 'vet') }})
-            </a>
-            <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
-              <span>VTHO Balance: </span>
-              {{ formatCount(balance.vtho) }}
-              ({{ formatPrice(balance.vtho, 'vtho') }})
-            </a>
-          </div>
-        </div>
+<div class="container" style="margin-top: 30px">
+  <div class="inner-container">
+    <a-card>
+      <div class="balances">
+        <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
+          <span>VET Balance:</span>
+          {{ formatCount(balance.vet) }}
+          ({{ formatPrice(balance.vet, 'vet') }})
+        </a>
+        <a href="https://explore.veforge.com/accounts/0x534BD48d7CfB0602EA3708cfdDacFeb2242c843e" target="_blank">
+          <span>VTHO Balance: </span>
+          {{ formatCount(balance.vtho) }}
+          ({{ formatPrice(balance.vtho, 'vtho') }})
+        </a>
       </div>
-    </div>
+    </a-card>
   </div>
+</div>
 </template>
 
 <script>
-
 export default {
-  name: 'Balance',
-  props: [
-    'prices',
-    'lastValue',
-  ],
+  name: "Balance",
+  props: ["prices", "lastValue"],
   data() {
     return {
       balance: {
         vet: 0,
-        vtho: 0,
-      },
-    }
+        vtho: 0
+      }
+    };
   },
   mounted() {
     this.$getBalance().then(data => {
@@ -51,14 +45,14 @@ export default {
       let number = num / 1000000000000000000;
       let price = this.prices[type] * number;
 
-      return Intl.NumberFormat('en-US', {
-        style: 'currency', 
-        currency: 'USD',
-        minimumFractionDigits: 3,
+      return Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 3
       }).format(price);
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -81,6 +75,10 @@ export default {
 }
 
 .balances {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   a {
     color: inherit;
     display: inline-block;
