@@ -9,17 +9,17 @@
           <div>
             <h5>Community</h5>
             <div class="links">
-              <a href="http://t.me/montifinance">Telegram Announcements</a>
-              <a href="https://t.me/montichat">Telegram Chat</a>
-              <a href="https://discord.gg/UamcJ8t">Discord</a>
+              <a target="_blank" href="http://t.me/montifinance">Telegram Announcements</a>
+              <a target="_blank" href="https://t.me/montichat">Telegram Chat</a>
+              <a target="_blank" href="https://discord.gg/UamcJ8t">Discord</a>
             </div>
           </div>
           <div>
             <h5>Social</h5>
             <div class="links">
-              <a href="https://twitter.com/MontiFinance">Twitter</a>
-              <a href="https://medium.com/montifinance">Medium</a>
-              <a href="https://github.com/Monti/">Github</a>
+              <a target="_blank" href="https://twitter.com/MontiFinance">Twitter</a>
+              <a target="_blank" href="https://medium.com/montifinance">Medium</a>
+              <a target="_blank" href="https://github.com/Monti/">Github</a>
             </div>
           </div>
           <div>
