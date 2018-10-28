@@ -20,7 +20,7 @@
               <a href="#">Twitter</a>
               <a href="#">Medium</a>
               <a href="#">Github</a>
-              <a href="#">ZenDesk / Email</a>
+              <a href="#">Email</a>
             </div>
           </div>
           <div>
@@ -57,9 +57,22 @@ h5 {
   text-transform: uppercase;
 }
 
+h5 {
+  @media all and (max-width: 768px) {
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .links {
@@ -76,5 +89,6 @@ a {
     color: red;
   }
 }
+
 
 </style>
