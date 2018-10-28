@@ -1,33 +1,31 @@
 <template>
   <footer>
     <div class="container">
-      <div class="inner-container">
-        <div class="footer-content">
-          <div>
-            <h3>Vexchange</h3>
+      <div class="footer-content">
+        <div>
+          <h3>Vexchange</h3>
+        </div>
+        <div>
+          <h5>Community</h5>
+          <div class="links">
+            <a target="_blank" href="http://t.me/montifinance">Telegram Announcements</a>
+            <a target="_blank" href="https://t.me/montichat">Telegram Chat</a>
+            <a target="_blank" href="https://discord.gg/UamcJ8t">Discord</a>
           </div>
-          <div>
-            <h5>Community</h5>
-            <div class="links">
-              <a target="_blank" href="http://t.me/montifinance">Telegram Announcements</a>
-              <a target="_blank" href="https://t.me/montichat">Telegram Chat</a>
-              <a target="_blank" href="https://discord.gg/UamcJ8t">Discord</a>
-            </div>
+        </div>
+        <div>
+          <h5>Social</h5>
+          <div class="links">
+            <a target="_blank" href="https://twitter.com/MontiFinance">Twitter</a>
+            <a target="_blank" href="https://medium.com/montifinance">Medium</a>
+            <a target="_blank" href="https://github.com/Monti/">Github</a>
           </div>
-          <div>
-            <h5>Social</h5>
-            <div class="links">
-              <a target="_blank" href="https://twitter.com/MontiFinance">Twitter</a>
-              <a target="_blank" href="https://medium.com/montifinance">Medium</a>
-              <a target="_blank" href="https://github.com/Monti/">Github</a>
-            </div>
-          </div>
-          <div>
-            <h5>About</h5>
-            <div class="links">
-              <a href="mailto:careers@monti.finance">Careers</a>
-              <a href="mailto:contact@monti.finance">Contact</a>
-            </div>
+        </div>
+        <div>
+          <h5>About</h5>
+          <div class="links">
+            <a href="mailto:careers@monti.finance">Careers</a>
+            <a href="mailto:contact@monti.finance">Contact</a>
           </div>
         </div>
       </div>

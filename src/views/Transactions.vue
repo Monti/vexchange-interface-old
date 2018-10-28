@@ -2,14 +2,13 @@
   <div>
     <AppHeader/>
     <div class="container">
-      <div class="inner-container page">
+      <div class="page">
         <a-card
-              style="width:100%"
-              :tabList="tabList"
-              :activeTabKey="key"
-              @tabChange="selectedTab => onTabChange(selectedTab, 'key')"
-              bodyStyle="padding: 0"
-        >
+          style="width: 100%"
+          :tabList="tabList"
+          :activeTabKey="key"
+          @tabChange="selectedTab => onTabChange(selectedTab, 'key')"
+          bodyStyle="padding: 0">
           <PurchaseEventTable v-if="key === 'ethpurchase'" key="eth" event="EthPurchase" event-name="ETH Purchases" :result-mapping="ethPurchaseMapper" :columns="ethColumns"/>
           <PurchaseEventTable v-else-if="key === 'tokenpurchase'" key="token" event="TokenPurchase" event-name="Token Purchases" :result-mapping="tokenPurchaseMapper" :columns="tokenColumns"/>
         </a-card>

@@ -2,32 +2,31 @@
 <div>
   <div class="header-wrapper">
     <div class="container">
-      <div class="inner-container">
-        <header>
-          <div>
-            <h1>Vexchange</h1>
-            <span>
-              <small>
-                beta
-              </small>
-            </span>
-          </div>
-          <local-changer />
-        </header>
-      </div>
+      <header>
+        <div>
+          <h1>Vexchange</h1>
+          <span>
+            <small>
+              beta
+            </small>
+          </span>
+        </div>
+        <local-changer />
+      </header>
     </div>
   </div>
-  <a-menu
-          v-model="current"
-          mode="horizontal"
-  >
-    <a-menu-item key="home">
-      <router-link to="/"><a-icon type="appstore" />Home</router-link>
-    </a-menu-item>
-    <a-menu-item key="transactions">
-      <router-link to="transactions"><a-icon type="swap" />Transactions</router-link>
-    </a-menu-item>
-  </a-menu>
+  <div class="nav">
+    <div class="container">
+      <a-menu v-model="current" mode="horizontal">
+        <a-menu-item key="home">
+          <router-link to="/"><a-icon type="appstore" />Home</router-link>
+        </a-menu-item>
+        <a-menu-item key="transactions">
+          <router-link to="transactions"><a-icon type="swap" />Transactions</router-link>
+        </a-menu-item>
+      </a-menu>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -61,12 +60,6 @@ export default {
 .header-wrapper {
   background: linear-gradient(35deg, #002fca, #1875ff);
   padding: 24px;
-
-  @media all and (max-width: 768px) {
-    .inner-container {
-      margin: 0;
-    }
-  }
 }
 
 header {
@@ -90,6 +83,10 @@ h1 {
   }
 }
 
+.nav {
+  background-color: #fff;
+}
+
 .languages {
   display: flex;
   font-size: 0.8rem;
@@ -109,5 +106,9 @@ h1 {
       color: #000000;
     }
   }
+}
+
+.ant-menu-horizontal {
+  border: none;
 }
 </style>

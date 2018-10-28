@@ -27,7 +27,6 @@ export default {
    AppFooter,
    AppBody,
    Balance,
-   Footer
   },
   props: ['locale'],
   data() {

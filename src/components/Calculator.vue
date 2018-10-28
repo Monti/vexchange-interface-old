@@ -1,5 +1,5 @@
 <template>
-  <Card :title="$t('calculator.label')">
+  <a-card :title="$t('calculator.label')">
     <div class="wrapper">
       <div class="calc">
         <span class="label">{{ $t('calculator.VETToVTHO') }}</span>
@@ -24,18 +24,17 @@
       </span>
       {{ $t('calculator.notice') }}
     </small>
-  </Card>
+  </a-card>
 </template>
 
 <script>
 import _ from 'lodash';
 
 import TipIcon from './svgs/TipIcon';
-import Card from './Card';
 
 export default {
   name: 'Calculator',
-  components: { Card, TipIcon },
+  components: { TipIcon },
   data() {
     return {
       vet: {

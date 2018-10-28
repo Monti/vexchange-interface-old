@@ -6,6 +6,11 @@ import VueI18n from "vue-i18n";
 import VueRouter from "vue-router";
 import moment from "moment";
 
+import "normalize.css";
+import Antd from "ant-design-vue";
+
+import "ant-design-vue/dist/antd.css";
+
 import Web3Plugin from "./plugins/Web3";
 import BalancePlugin from "./plugins/Balance";
 import ContractPlugin from "./plugins/Contract";
@@ -14,10 +19,6 @@ import App from "./App.vue";
 import ContractJson from "./build/contracts/exchange.json";
 
 import transations from "./translations";
-
-import "normalize.css";
-import "ant-design-vue/dist/antd.css";
-import Antd from "ant-design-vue";
 
 import AppHome from "./views/Home";
 import Transactions from "./views/Transactions";

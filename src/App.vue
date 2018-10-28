@@ -58,11 +58,6 @@ body {
   height: 100%;
 }
 
-.inner-container {
-  margin: 0 5vw;
-
-}
-
 .container {
   width: 100%;
   max-width: 1196px;

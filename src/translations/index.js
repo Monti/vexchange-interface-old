@@ -9,7 +9,7 @@ const translations = {
       minimunVTHO: 'MINIMUM VTHO DEPOSIT',
     },
     calculator: {
-      label: 'calculator',
+      label: 'Calculator',
       VETToVTHO: 'VET TO VTHO ESTIMATE',
       VTHOToVET: 'VTHO TO VET ESTIMATE',
       notice: 'This calculator pulls prices directly from the smart contract, however, another user may enter an order before you. As such, the end price may differ from what the calculator is displaying',

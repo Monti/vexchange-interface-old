@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col">
-      <Card :title="'Vexchange ' + $t('price')">
+      <a-card :title="'Vexchange ' + $t('price')">
         <div class="wrapper">
           <div class="item">
             <div class="title">
@@ -20,10 +20,10 @@
             </div>
           </div>
         </div>
-      </Card>
+      </a-card>
     </div>
     <div class="col">
-      <Card :title="'Coinmarketcap ' + $t('price')">
+      <a-card :title="'Coinmarketcap ' + $t('price')">
         <div class="wrapper">
           <div class="item">
             <div class="title">
@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-      </Card>
+      </a-card>
     </div>
   </div>
 </template>

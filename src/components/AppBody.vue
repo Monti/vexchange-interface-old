@@ -1,15 +1,13 @@
 <template>
   <div class="body">
     <div class="container">
-      <div class="inner-container">
-        <div class="transfer-info">
-          <TransferInfo />
-          <QRCode />
-        </div>
-        <Prices :prices="prices" />
-        <Calculator />
-        <FeeTable />
+      <div class="transfer-info">
+        <TransferInfo />
+        <QRCode />
       </div>
+      <Prices :prices="prices" />
+      <Calculator />
+      <FeeTable />
     </div>
   </div>
 </template> 

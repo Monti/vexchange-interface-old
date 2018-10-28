@@ -1,5 +1,5 @@
 <template>
-  <Card :title="'Gas ' + $t('fees.label')" :extra="$t('fees.subtitle')">
+  <a-card :title="'Gas ' + $t('fees.label')" :extra="$t('fees.subtitle')">
     <div class="wrapper">
       <div class="item">
         <div class="title">
@@ -38,19 +38,15 @@
         </div>
       </div>
     </div>
-  </Card>
+  </a-card>
 </template>
 
 <script>
-import Card from './Card';
 import { vtho, vet } from '@/fees';
 
 export default {
   name: 'FeeTable',
   props: [ 'title', 'fees', 'base' ],
-  components: {
-    Card,
-  },
   data() {
     return {
       vtho,
