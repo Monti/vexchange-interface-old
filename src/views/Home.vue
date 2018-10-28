@@ -13,7 +13,6 @@ import AppHeader from '@/components/AppHeader'
 import AppFooter from '@/components/AppFooter'
 import AppBody from '@/components/AppBody'
 import Balance from '@/components/Balance'
-import Footer from '@/components/Footer'
 
 const vthoTicker = 'https://api.coinmarketcap.com/v2/ticker/3012/';
 const vetTicker = 'https://api.coinmarketcap.com/v2/ticker/3077/';
