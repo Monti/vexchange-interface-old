@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="header-wrapper">
     <div class="container">
       <div class="inner-container">
@@ -16,18 +17,30 @@
       </div>
     </div>
   </div>
+  <a-menu
+          v-model="current"
+          mode="horizontal"
+  >
+    <a-menu-item key="home">
+      <router-link to="/"><a-icon type="appstore" />Home</router-link>
+    </a-menu-item>
+    <a-menu-item key="transactions">
+      <router-link to="transactions"><a-icon type="swap" />Transactions</router-link>
+    </a-menu-item>
+  </a-menu>
+</div>
 </template>
 
 <script>
-import LocalChanger from './LocaleChanger';
+import LocalChanger from "./LocaleChanger";
 
 export default {
-  name: 'AppHeader',
-  props: ['prices', 'isLoading'],
+  name: "AppHeader",
+  props: ["prices", "isLoading"],
   components: { LocalChanger },
   methods: {
     setLocale(locale) {
-      this.$router.push({ path: `/${locale}` })
+      this.$router.push({ path: `/${locale}` });
     }
   },
   computed: {
@@ -36,14 +49,17 @@ export default {
       let vthoPrice = (vet / vtho).toFixed(2);
 
       return vthoPrice;
+    },
+    current: function() {
+      return this.$route.path.slice(1) || "home";
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .header-wrapper {
-  background: linear-gradient(35deg,#002fca,#1875ff);
+  background: linear-gradient(35deg, #002fca, #1875ff);
   padding: 24px;
 
   @media all and (max-width: 768px) {
@@ -63,7 +79,7 @@ header {
 h1 {
   color: #fff;
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   letter-spacing: 5px;
   margin: 0;

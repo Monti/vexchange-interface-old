@@ -14,7 +14,6 @@ import AppFooter from '@/components/AppFooter'
 import AppBody from '@/components/AppBody'
 import Balance from '@/components/Balance'
 
-
 const vthoTicker = 'https://api.coinmarketcap.com/v2/ticker/3012/';
 const vetTicker = 'https://api.coinmarketcap.com/v2/ticker/3077/';
 
@@ -28,6 +27,7 @@ export default {
    AppFooter,
    AppBody,
    Balance,
+   Footer
   },
   props: ['locale'],
   data() {
