@@ -9,26 +9,24 @@
           <div>
             <h5>Community</h5>
             <div class="links">
-              <a href="#">Telegram Announcements</a>
-              <a href="#">Telegram Chat</a>
-              <a href="#">Discord</a>
+              <a href="http://t.me/montifinance">Telegram Announcements</a>
+              <a href="https://t.me/montichat">Telegram Chat</a>
+              <a href="https://discord.gg/UamcJ8t">Discord</a>
             </div>
           </div>
           <div>
             <h5>Social</h5>
             <div class="links">
-              <a href="#">Twitter</a>
-              <a href="#">Medium</a>
-              <a href="#">Github</a>
-              <a href="#">ZenDesk / Email</a>
+              <a href="https://twitter.com/MontiFinance">Twitter</a>
+              <a href="https://medium.com/montifinance">Medium</a>
+              <a href="https://github.com/Monti/">Github</a>
             </div>
           </div>
           <div>
             <h5>About</h5>
             <div class="links">
-              <a href="#">MNT Token</a>
-              <a href="#">Careers</a>
-              <a href="#">Contact</a>
+              <a href="mailto:careers@monti.finance">Careers</a>
+              <a href="mailto:contact@monti.finance">Contact</a>
             </div>
           </div>
         </div>
